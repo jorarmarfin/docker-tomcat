@@ -1,0 +1,28 @@
+version: '3'
+services:
+  tomcat:
+    container_name: srv-tomcat
+    image: cpaitsupport/tomcat-jdbc
+    volumes:
+      - ./embalse/app:/usr/local/tomcat/webapps
+    networks: 
+      - net-tomcat
+    ports:
+      - 8080:8080
+      - 8009:8009
+  # tomcat-oficial:
+  #   container_name: srv-tomcat-oficial
+  #   image: tomcat:8.0
+  #   networks: 
+  #     - net-tomcat
+  #   ports:
+  #     - 8081:8080
+  # tomcat:
+  #   container_name: srv-tomcat
+  #   image: openweb/oracle-tomcat:7-jre8 
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - net-tomcat
+networks:
+  net-tomcat:

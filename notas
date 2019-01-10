@@ -1,0 +1,3 @@
+mvn install:install-file -Dfile=/ojdbc8.jar -DgroupId=com.oracle -DartifactId=ojdbc8 -Dversion=12.2.0.1 -Dpackaging=jarexi
+
+docker run -d -p 8080:8080 -p 8009:8009 -v /embalse/app:/usr/local/tomcat/webapps --name app-embalse cpaitsupport/tomcat-jdbc
